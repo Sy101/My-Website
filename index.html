@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <header class="starry-background">
+        <h1>Welcome to Felix Hernadez Kreher's Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#links">Links</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="intro" class="parallax"></section>
+
+    <section id="search">
+        <input type="text" id="projectSearch" placeholder="Search Projects..." onkeyup="searchProjects()">
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I have been programming since I was 9 years old starting with making games using Java. Since then my interest in the field of Computer science
+            has grown stronger and stronger. One of my core experiences in this field was when I did an internship at Hebbian a company focused on
+            teaching computer science and creating courses, at the end of 10th grade. When I was working for them I learned a lot about how to web scrape
+            and interact with apis. I am a very independent person and am fast at figuring things out on my own. I am a very reliable and consistent person
+            suited well for any Software engineering and programming Job.
+            </p>
+    </section>
+
+    <section id="projects">
+        <div class="project animate-fade-in">
+            <h3><i class="fas fa-laptop-code"></i> Computer Science University Ranking Website</h3>
+            <p>I created a university ranking website demo while I was doing a internship at hebbian where I used webscraping to extract data from varios websites and then used that data with the help of chat GPT's api to create descriptions and then create a website: https://sy101.github.io/CSUniRankingWP/</p>
+            <a href="https://github.com/Sy101/CSUniRankingWP"><i class="fab fa-github"></i> View on GitHub</a>
+        </div>
+        <div class="project animate-fade-in">
+            <h3><i class="fas fa-laptop-code"></i> Demo</h3>
+            <p>Demo</p>
+            <a href="https://github.com/Sy101/CSUniRankingWP"><i class="fab fa-github"></i> View on GitHub</a>
+        </div>
+        <!-- Repeat for other projects -->
+    </section>
+
+    <section id="links">
+        <h2>Links</h2>
+        <ul>
+            <li><a href="https://www.linkedin.com/in/felix-hernandez-975330298/"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+            <li><a href="https://github.com/Sy101"><i class="fab fa-github"></i> GitHub - Sy101</a></li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Your Name. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function searchProjects() {
+            var input, filter, projects, project, title, i, txtValue;
+            input = document.getElementById("projectSearch");
+            filter = input.value.toUpperCase();
+            projects = document.getElementById("projects");
+            project = projects.getElementsByClassName("project");
+
+            for (i = 0; i < project.length; i++) {
+                title = project[i].getElementsByTagName("h3")[0];
+                txtValue = title.textContent || title.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    project[i].style.display = "";
+                } else {
+                    project[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
